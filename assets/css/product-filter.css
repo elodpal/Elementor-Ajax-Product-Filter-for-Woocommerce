@@ -1,0 +1,26 @@
+/* product-filter.css
+   Styling moved to the Elementor widget settings; keep minimal runtime styles here. */
+
+.product-filter-loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+.product-filter-reset-wrapper {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.product-filter-reset-link {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.product-filter-reset-link:hover {
+    color: #005a87;
+    text-decoration: underline;
+}
