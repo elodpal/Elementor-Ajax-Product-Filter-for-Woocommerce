@@ -26,10 +26,30 @@
             }
         });
 
+        // Function to toggle reset link visibility based on selected filters
+        function updateResetLinkVisibility($widget) {
+            var $resetLink = $widget.find('.product-filter-reset-wrapper');
+            var hasChecked = $widget.find('.product-filter-checkbox:checked').length > 0;
+            
+            if (hasChecked) {
+                $resetLink.show();
+            } else {
+                $resetLink.hide();
+            }
+        }
+
+        // Initialize reset link visibility on page load
+        $('.product-filter-widget').each(function(){
+            updateResetLinkVisibility($(this));
+        });
+
         // Delegated handler for dynamically rendered widgets
         $(document).on('change', '.product-filter-widget .product-filter-checkbox', function(){
             var $cb = $(this);
             var $thisWidget = $cb.closest('.product-filter-widget');
+
+            // Update reset link visibility
+            updateResetLinkVisibility($thisWidget);
 
             var selectedCategories = [];
             $thisWidget.find('.product-filter-checkbox:checked').each(function(){
@@ -206,9 +226,8 @@
             // Uncheck all checkboxes in this widget
             $thisWidget.find('.product-filter-checkbox').prop('checked', false);
 
-            // Show loading indicator
-            var $thisLoading = $thisWidget.find('.product-filter-loading');
-            $thisLoading.show();
+            // Update reset link visibility
+            updateResetLinkVisibility($thisWidget);
 
             var containerSelector = $thisWidget.data('container');
             var $container = $(containerSelector);
