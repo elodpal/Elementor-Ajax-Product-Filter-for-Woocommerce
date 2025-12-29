@@ -3,7 +3,7 @@
  * Plugin Name: Elementor Ajax Product Filter for Woocommerce
  * Plugin URI: https://example.com/product-filter-plugin
  * Description: A super lightweight and fast Elementor widget for filtering WooCommerce products by categories via AJAX.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Elod Pal
  * Author URI: https://elodpal.ro
  * License: GPL-2.0+
